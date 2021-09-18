@@ -1,11 +1,14 @@
 import { CountriesProvider } from "../context/CountriesContext";
+import { ThemeProvider } from "../context/ThemeContext";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <CountriesProvider>
-      <Component {...pageProps} />
-    </CountriesProvider>
+    <ThemeProvider>
+      <CountriesProvider>
+        <Component {...pageProps} />
+      </CountriesProvider>
+    </ThemeProvider>
   );
 }
 
