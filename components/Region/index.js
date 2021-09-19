@@ -8,7 +8,7 @@ const Region = ({ region, setRegion, dark }) => {
       <div className="select" onClick={() => setOpen((prevOpen) => !prevOpen)}>
         Filter by Region
         <span>
-          <i class="fas fa-chevron-down"></i>
+          <i className="fas fa-chevron-down"></i>
         </span>
       </div>
       {open && (

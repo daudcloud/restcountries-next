@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Layout from "../../components/Layout";
 
 export default function Details() {
   const router = useRouter();
@@ -20,5 +21,9 @@ export default function Details() {
     setDetailed({ ...temp });
   }, [countries]);
 
-  return <p>{detailed.name}</p>;
+  return (
+    <Layout>
+      <p>{detailed.name}</p>
+    </Layout>
+  );
 }

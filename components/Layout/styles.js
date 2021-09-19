@@ -28,8 +28,9 @@ const StyledLayout = styled.div`
     justify-content: space-between;
     align-items: center;
 
-    h1 {
+    .title {
       font-size: 1.5rem;
+      font-weight: 800;
     }
   }
   .toggle-dark {
