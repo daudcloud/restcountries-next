@@ -2,10 +2,8 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
 import { useAllCountries, useCountries } from "../context/CountriesContext";
-import Input from "../components/Input";
-import Region from "../components/Region";
 import Countries from "../components/Countries";
-import Container from "./styles";
+import Handler from "../components/Handler";
 
 export default function Home() {
   const [countries, setCountries] = useCountries();
@@ -37,13 +35,10 @@ export default function Home() {
           referrerpolicy="no-referrer"
         />
       </Head>
-      <Container>
-        <Layout>
-          <Input region={region} />
-          <Region setRegion={setRegion} />
-          <Countries />
-        </Layout>
-      </Container>
+      <Layout>
+        <Handler region={region} setRegion={setRegion} />
+        <Countries />
+      </Layout>
     </div>
   );
 }

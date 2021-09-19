@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useAllCountries, useCountries } from "../../context/CountriesContext";
+import StyledInput from "./styles";
 
-export default function Input({ region }) {
+const Input = ({ region, dark }) => {
   const [inputValue, setInputValue] = useState("");
   const [countries, setCountries] = useCountries();
   const [all, setAll] = useAllCountries();
@@ -29,8 +30,18 @@ export default function Input({ region }) {
   }, [inputValue]);
 
   return (
-    <form>
-      <input type="text" value={inputValue} onChange={handleChange} />
-    </form>
+    <StyledInput dark={dark ? true : false}>
+      <i className="fas fa-search"></i>
+      <form>
+        <input
+          placeholder="Search for a country..."
+          type="text"
+          value={inputValue}
+          onChange={handleChange}
+        />
+      </form>
+    </StyledInput>
   );
-}
+};
+
+export default Input;

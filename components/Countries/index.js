@@ -6,7 +6,7 @@ const Countries = () => {
   return (
     <>
       {countries.map((country) => (
-        <Country country={country} />
+        <Country key={country.name} country={country} />
       ))}
     </>
   );
