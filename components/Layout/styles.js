@@ -7,12 +7,6 @@ const StyledLayout = styled.div`
     justify-content: space-between;
     align-items: center;
   }
-  .container {
-    width: 100%;
-    max-width: 70rem;
-    margin: auto;
-    padding: 0 2em;
-  }
 `;
 
 export default StyledLayout;

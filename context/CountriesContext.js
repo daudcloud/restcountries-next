@@ -23,6 +23,7 @@ export const CountriesProvider = ({ children }) => {
     setCountries(data);
     setAll(data);
   }, []);
+
   return (
     <AllContext.Provider value={all}>
       <AllUpdateContext.Provider value={setAll}>

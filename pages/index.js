@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Layout from "../components/Layout";
 import { useAllCountries, useCountries } from "../context/CountriesContext";
 import Input from "../components/Input";
+import Region from "../components/Region";
+import Countries from "../components/Countries";
+import Container from "./styles";
 
 export default function Home() {
   const [countries, setCountries] = useCountries();
@@ -35,20 +37,13 @@ export default function Home() {
           referrerpolicy="no-referrer"
         />
       </Head>
-      <Layout>
-        <Input region={region} />
-        <div onClick={() => setRegion("")}>all</div>
-        <div onClick={() => setRegion("africa")}>africa</div>
-        <div onClick={() => setRegion("americas")}>america</div>
-        <div onClick={() => setRegion("asia")}>asia</div>
-        <div onClick={() => setRegion("europe")}>europe</div>
-        <div onClick={() => setRegion("oceania")}>oceania</div>
-        {countries.map((country) => (
-          <Link href={`/details/${country.name.toLowerCase().replace(" ", "-")}`}>
-            {country.name}
-          </Link>
-        ))}
-      </Layout>
+      <Container>
+        <Layout>
+          <Input region={region} />
+          <Region setRegion={setRegion} />
+          <Countries />
+        </Layout>
+      </Container>
     </div>
   );
 }
