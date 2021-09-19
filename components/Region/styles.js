@@ -21,6 +21,7 @@ const StyledRegion = styled.div`
 
   .option {
     position: absolute;
+    z-index: 20;
     bottom: -5px;
     left: 0;
     right: 0;
@@ -29,6 +30,7 @@ const StyledRegion = styled.div`
       props.dark ? "var(--elem-dark)" : "var(--elem-light)"};
     border-radius: 0.3rem;
     padding: 1em 0;
+    box-shadow: 0 0 1em hsla(0, 0%, 0%, 0.2);
 
     li {
       list-style: none;

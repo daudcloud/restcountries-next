@@ -6,7 +6,7 @@ const StyledHandler = styled.div`
   background: transparent;
   align-items: center;
   font-size: 0.9rem;
-  padding-top: 3rem;
+  padding: 3rem 0;
 `;
 
 export default StyledHandler;
