@@ -17,13 +17,11 @@ export const CountriesProvider = ({ children }) => {
   const [countries, setCountries] = useState([]);
   const [all, setAll] = useState([]);
 
-  useEffect(() => {
-    fetch("https://restcountries.eu/rest/v2/all")
-      .then((res) => res.json())
-      .then((data) => {
-        setCountries(data);
-        setAll(data);
-      });
+  useEffect(async () => {
+    const res = await fetch("https://restcountries.eu/rest/v2/all");
+    const data = await res.json();
+    setCountries(data);
+    setAll(data);
   }, []);
   return (
     <AllContext.Provider value={all}>

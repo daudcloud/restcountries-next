@@ -44,7 +44,7 @@ export default function Home() {
         <div onClick={() => setRegion("europe")}>europe</div>
         <div onClick={() => setRegion("oceania")}>oceania</div>
         {countries.map((country) => (
-          <Link href={`/${country.name.toLowerCase().replace(" ", "-")}`}>
+          <Link href={`/details/${country.name.toLowerCase().replace(" ", "-")}`}>
             {country.name}
           </Link>
         ))}
