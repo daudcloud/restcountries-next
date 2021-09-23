@@ -8,11 +8,20 @@ const Country = ({ country }) => {
   return (
     <StyledCountry dark={dark}>
       <div className="flag">
-        <Image src={country.flag} layout="fill" objectFit="cover" />
+        <Image
+          src={country.flags[0]}
+          layout="fill"
+          alt={country.name.common}
+          objectFit="cover"
+        />
       </div>
       <div className="info">
-        <Link href={`/details/${country.name.toLowerCase().replace(" ", "-")}`}>
-          <a>{country.name}</a>
+        <Link
+          href={`/details/${country.name.common
+            .toLowerCase()
+            .replace(" ", "-")}`}
+        >
+          <a>{country.name.common}</a>
         </Link>
       </div>
     </StyledCountry>

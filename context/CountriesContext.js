@@ -18,7 +18,7 @@ export const CountriesProvider = ({ children }) => {
   const [all, setAll] = useState([]);
 
   useEffect(async () => {
-    const res = await fetch("https://restcountries.eu/rest/v2/all");
+    const res = await fetch("https://restcountries.com/v3/all");
     const data = await res.json();
     setCountries(data);
     setAll(data);

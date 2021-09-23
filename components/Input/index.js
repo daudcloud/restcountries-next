@@ -25,7 +25,9 @@ const Input = ({ region, dark }) => {
 
   useEffect(() => {
     const regx = new RegExp(`\^${inputValue}`, "gi");
-    const tempCountries = current.filter((country) => country.name.match(regx));
+    const tempCountries = current.filter((country) =>
+      country.name.common.match(regx)
+    );
     setCountries(tempCountries);
   }, [inputValue]);
 
